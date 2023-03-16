@@ -1,4 +1,4 @@
 import torch
 
 def wd(layers: list()):
-    return 0.1
+    return 1 - len(layers)/10
