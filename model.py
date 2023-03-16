@@ -12,6 +12,7 @@ class MLP(nn.Module):
         self.l3 = LinW(in_features=512, out_features=512, depth=2)
         self.l4 = nn.Linear(512, 10)
         self.gelu = nn.GELU()
+        self.layers = [self.l2, self.l3]
 
     def forward(self, x):
         x = self.gelu(self.l1(x))
@@ -19,6 +20,12 @@ class MLP(nn.Module):
         x = self.gelu(self.l3(x))
         x = self.l4(x)
         return x
+    
+    def __getitem__(self, idx):
+        return self.layers[idx]
+    
+    def __len__(self):
+        return len(self.layers)
     
 
 class LinW(nn.Linear):
