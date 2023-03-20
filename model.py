@@ -16,10 +16,13 @@ class MLP(nn.Module):
         self.layers = [self.l2, self.l3]
 
     def forward(self, x):
+        repr = []
         x = self.flatten(x)
         x = self.gelu(self.l1(x))
-        x = self.gelu(self.l2(x))
-        x = self.gelu(self.l3(x))
+        repr.append(x)
+        x = self.gelu(self.l2(x, repr))
+        repr.append(x)
+        x = self.gelu(self.l3(x, repr))
         x = self.l4(x)
         return x
     
@@ -36,7 +39,7 @@ class LinW(nn.Linear):
         self.depth = depth
         self.layers = layers[:self.depth] if len(layers)>0 else layers
 
-    def forward(self, input):
-        weight_decay = wd(self.layers)
+    def forward(self, input, prev=[]):
+        weight_decay = wd(prev)
         weight = self.weight * weight_decay
         return F.linear(input, weight, self.bias)
