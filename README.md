@@ -4,7 +4,7 @@ Dynamic Learning of Embodied Abstractions
 
 ## Cite this work
 ```bibtex
-@misc{CoppariTedoldi2022,
+@misc{CoppariTedoldi2023,
     title   = {Dynamic Learning of Embodied Abstractions},
     author  = {Andrea Coppari, Riccardo Tedoldi},
     year    = {2023},
