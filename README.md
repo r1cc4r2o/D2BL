@@ -1,7 +1,7 @@
-# d-lea
+# D-LeA
 Dynamic Learning of Embodied Abstractions
 
-
+![figure](img/fig.svg)
 ## Cite this work
 ```bibtex
 @misc{CoppariTedoldi2023,
