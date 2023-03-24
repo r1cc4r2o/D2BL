@@ -8,10 +8,10 @@ class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
         self.flatten = nn.Flatten()
-        self.l1 = nn.Linear(3072, 512)
-        self.l2 = LinW(in_features=512, out_features=512, depth=0)
-        self.l3 = LinW(in_features=512, out_features=512, depth=1, layers=[self.l2])
-        self.l4 = nn.Linear(512, 10)
+        self.l1 = nn.Linear(784, 3)
+        self.l2 = LinW(in_features=3, out_features=3, depth=0)
+        self.l3 = LinW(in_features=3, out_features=3, depth=1, layers=[self.l2])
+        self.l4 = nn.Linear(3, 10)
         self.gelu = nn.GELU()
         self.layers = [self.l2, self.l3]
 
@@ -19,9 +19,9 @@ class MLP(nn.Module):
         repr = []
         x = self.flatten(x)
         x = self.gelu(self.l1(x))
-        repr.append(x)
+        repr.append(x.detach().cpu().numpy())
         x = self.gelu(self.l2(x, repr))
-        repr.append(x)
+        repr.append(x.detach().cpu().numpy())
         x = self.gelu(self.l3(x, repr))
         x = self.l4(x)
         return x
@@ -41,5 +41,5 @@ class LinW(nn.Linear):
 
     def forward(self, input, prev=[]):
         weight_decay = wd(prev)
-        weight = self.weight * weight_decay
+        weight = self.weight * weight_decay.to('cuda:0')
         return F.linear(input, weight, self.bias)
