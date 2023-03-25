@@ -8,7 +8,7 @@ from torch.utils.data import DataLoader
 
 
 
-""" [EVALUATION VAE / VAEWD]
+""" [EVALUATION VQVAE / VQVAEWD]
     
     Datasets
         + MNIST 

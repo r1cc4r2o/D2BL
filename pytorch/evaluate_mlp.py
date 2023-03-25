@@ -7,6 +7,7 @@ from torch.utils.data import DataLoader
 from models.mlp_wd import MLPWD
 from models.mlp import MLP
 
+
 """ [EVALUATION MLP / MLPWD]
     
     Datasets
