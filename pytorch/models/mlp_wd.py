@@ -2,11 +2,11 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from utils import wd
+from models.utils import wd
 
-class MLP(nn.Module):
+class MLPWD(nn.Module):
     def __init__(self):
-        super(MLP, self).__init__()
+        super(MLPWD, self).__init__()
         self.flatten = nn.Flatten()
         self.l1 = nn.Linear(784, 256)
         self.l2 = LinW(in_features=256, out_features=256, depth=0)
