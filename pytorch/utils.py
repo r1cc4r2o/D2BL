@@ -10,5 +10,6 @@ def wd(layers: list()):
     # layers = np.array([layer*np.sqrt(depth+1) for depth, layer in enumerate(layers)]).flatten().reshape(-1, 1)
     res = KernelDensity(kernel="gaussian", bandwidth=0.2).fit(layers).sample([256])
     # return torch.from_numpy(np.array(res, dtype="float32"))
-    return torch.from_numpy(np.array(np.array([1]), dtype="float32"))
+    # return torch.from_numpy(np.array(np.array([1]), dtype="float32"))
+    return torch.from_numpy(np.array(res, dtype="float32"))
     # return 1 - len(layers)/10 if len(layers)>0 else 1
