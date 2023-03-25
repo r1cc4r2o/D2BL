@@ -1,3 +1,7 @@
-data/
+pytorch/data/
 __pycache__/
 .ipynb_checkpoints/
+pytorch/__pycache__/
+pytorch/.ipynb_checkpoints/
+jax/__pycache__/
+jax/.ipynb_checkpoints/

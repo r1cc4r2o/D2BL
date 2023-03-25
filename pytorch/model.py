@@ -8,10 +8,10 @@ class MLP(nn.Module):
     def __init__(self):
         super(MLP, self).__init__()
         self.flatten = nn.Flatten()
-        self.l1 = nn.Linear(784, 3)
-        self.l2 = LinW(in_features=3, out_features=3, depth=0)
-        self.l3 = LinW(in_features=3, out_features=3, depth=1, layers=[self.l2])
-        self.l4 = nn.Linear(3, 10)
+        self.l1 = nn.Linear(784, 256)
+        self.l2 = LinW(in_features=256, out_features=256, depth=0)
+        self.l3 = LinW(in_features=256, out_features=256, depth=1, layers=[self.l2])
+        self.l4 = nn.Linear(256, 10)
         self.gelu = nn.GELU()
         self.layers = [self.l2, self.l3]
 
