@@ -1,9 +1,19 @@
 # D-LeA
 Dynamic Learning of Embodied Abstractions
 
-
-
 ![figure](img/fig.svg)
+
+### TODO LIST
+
+- [ ] IMPLEMENT VQ-VAE
+- [ ] Compare latent spaces (FabLAB seminar plot angle and distance)
+- [ ] Parallel axis plot
+- [ ] Chose model x fine-tuning
+- [ ] Implement pipeline with hebbian
+- [ ] Fix-image
+- [ ] Chose eval metrics
+
+
 ## Cite this work
 ```bibtex
 @misc{CoppariTedoldi2023,
@@ -14,8 +24,9 @@ Dynamic Learning of Embodied Abstractions
 }
 ```
 
-## Reference
-```
+## Reference to other works
+
+``` bibtex
 @inproceedings{talloen2020pytorchhebbian,
   author       = {Jules Talloen and Joni Dambre and Alexander Vandesompele},
   location     = {Online},
