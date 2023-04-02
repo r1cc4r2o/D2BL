@@ -42,6 +42,17 @@ torch.manual_seed(0)
 
 class QuantizedCodebook(nn.Module):
     """ Quantized codebook for VQ-VAE
+    
+    Args:
+        num_embeddings (int): Number of embeddings
+        embedding_dim (int): Dimension of embedding
+        beta (float): Beta decay make the latent representation more robust
+        ema (bool): Use exponential moving average
+        _lambda (float): Decay rate for exponential moving average
+        
+    References:
+    - [Oord et al., 2017](https://arxiv.org/abs/1711.00937)
+    
     """
     def __init__(self, num_embeddings, embedding_dim, beta=0.25, ema=False, _lambda=0.99):
         super().__init__()
@@ -142,3 +153,20 @@ class QuantizedCodebook(nn.Module):
         perplexity = torch.exp(-torch.sum(avg_probs * torch.log(avg_probs + 1e-10)))
 
         return loss, quantized, perplexity, encodings
+    
+    
+    
+class VQVAE(nn.Module):
+    def __init__(self, in_channels, num_embeddings, embedding_dim,  ema=False, _lambda=0.99):
+        super().__init__()
+
+        self.q_layer = QuantizedCodebook(
+                        num_embeddings, 
+                        embedding_dim, 
+                        beta=0.25, 
+                        ema=False,
+                        _lambda=0.99
+                    )
+
+        # Encoder
+        self.encoder = 
