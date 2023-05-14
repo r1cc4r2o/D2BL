@@ -6,3 +6,4 @@ pytorch/.ipynb_checkpoints/
 jax/__pycache__/
 jax/.ipynb_checkpoints/
 data/
+hebbian/data/
