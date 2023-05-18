@@ -34,7 +34,7 @@ How to use
 ### Contact
 If you have suggestions or ideas for further improvemets please contact us.
 - riccardo tedoldi: [@riccardotedoldi](https://www.instagram.com/riccardotedoldi/)
-- marco garosi: [@andreacoppari](https://it.linkedin.com/in/andreacoppari1005)
+- andrea coppari: [@andreacoppari](https://it.linkedin.com/in/andreacoppari1005)
 
 Also, if you find any bugs or issues, please let us know. We are happy to fix them!
 
