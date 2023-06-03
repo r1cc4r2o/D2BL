@@ -8,10 +8,17 @@ Supervisor: [Andrea Ferigo](https://it.linkedin.com/in/andrea-ferigo), [Giovanni
  <img src="img/D2BL-2.svg" width="45%">
  <img src="img/D2BL.svg" width="45%" >
 </p>
-<p align="center">D2BL with a pseuso-attention mechanism for fine-tuning scenario</p>
+<p align="center">D2BL with pseudo-attention mechanism with and without crossing-over and mutations</p>
 <p align="center">
- <img src="img/D2BL-4.svg" width="66%" >
+ <img src="img/pseudo-attention.svg" width="45%" >
+ <img src="img/pseudo-attention-crossingovermutations.svg" width="45%" >
 </p>
+<p align="center">Pseudo-attention mechanism for fine-tuning</p>
+<p align="center">
+ <img src="img/pseudo-attention-crossingovermutations-finetuning.svg" width="66%" >
+</p>
+
+
 
 
 ## Overview
